@@ -51,7 +51,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/themes.scss"
             ]
           },
           "configurations": {
