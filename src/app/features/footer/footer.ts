@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -33,7 +33,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             <h4 class="footer-heading">Contato</h4>
             <div class="footer-social">
               <a
-                href="https://linkedin.com/in/jvmaiaa"
+                href="https://www.linkedin.com/in/joao-victor-maia-soares/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn de Joao Victor"

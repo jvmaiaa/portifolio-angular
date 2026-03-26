@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 
 @Component({
@@ -42,7 +42,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
 
           <div class="social-links">
             <a
-              href="https://linkedin.com/in/jvmaiaa"
+              href="https://www.linkedin.com/in/joao-victor-maia-soares/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn de Joao Victor"
