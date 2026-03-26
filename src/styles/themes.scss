@@ -1,42 +1,119 @@
-
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
 @use 'tailwindcss';
-@use '@angular/material' as mat;
+
+// ===== Dark Theme (default) =====
+:root,
+:root[data-theme="dark"] {
+  --java-orange: #f89820;
+  --java-red: #ea2d2e;
+  --spring-green: #6db33f;
+
+  --bg-primary: #0a0c0f;
+  --surface-1: #111318;
+  --surface-2: #1a1d24;
+  --surface-3: #1e232d;
+
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a8b8;
+  --text-tertiary: #6b7280;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --header-bg: rgba(10, 12, 15, 0.85);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+
+  --badge-bg: rgba(248, 152, 32, 0.1);
+  --badge-border: rgba(248, 152, 32, 0.2);
+  --badge-success-bg: rgba(109, 179, 63, 0.1);
+
+  --java-orange-ghost: rgba(248, 152, 32, 0.04);
+  --scrollbar-track: #111318;
+  --scrollbar-thumb: #2a2f3a;
+}
+
+// ===== Light Theme =====
+:root[data-theme="light"] {
+  --java-orange: #e08818;
+  --java-red: #d42020;
+  --spring-green: #5a9a30;
+
+  --bg-primary: #f8f9fc;
+  --surface-1: #ffffff;
+  --surface-2: #f1f3f8;
+  --surface-3: #e8ebf0;
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a5568;
+  --text-tertiary: #9ca3af;
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(248, 249, 252, 0.85);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+
+  --badge-bg: rgba(248, 152, 32, 0.08);
+  --badge-border: rgba(248, 152, 32, 0.2);
+  --badge-success-bg: rgba(109, 179, 63, 0.08);
+
+  --java-orange-ghost: rgba(248, 152, 32, 0.06);
+  --scrollbar-track: #f1f3f8;
+  --scrollbar-thumb: #c5c9d2;
+}
+
+// ===== Global Styles =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: 'Inter',
-    density: 0,
-  ));
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 }
 
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Sora', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
+html, body {
+  height: 100%;
   margin: 0;
 }
 
-html, body { height: 100%; }
-body {
-  margin: 0;
-  font-family: 'Inter';
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--java-orange); }
+
+::selection {
+  background: var(--java-orange);
+  color: #fff;
+}
+
+[appScrollReveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [appScrollReveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--java-orange);
+  outline-offset: 2px;
 }

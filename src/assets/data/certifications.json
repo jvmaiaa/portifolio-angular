@@ -1,0 +1,18 @@
+[
+  {
+    "id": "aws-cloud-practitioner",
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "year": 2024,
+    "imageUrl": "https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png",
+    "verifyUrl": "https://www.credly.com"
+  },
+  {
+    "id": "oracle-java-se11",
+    "name": "Oracle Certified Professional: Java SE 11 Developer",
+    "issuer": "Oracle",
+    "year": 2023,
+    "imageUrl": "https://brm-workforce.oracle.com/pdf/certify-assets/OCPJavaSE11702702.png",
+    "verifyUrl": "https://catalog-education.oracle.com"
+  }
+]
