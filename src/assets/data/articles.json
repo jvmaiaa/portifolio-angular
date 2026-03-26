@@ -1,0 +1,38 @@
+[
+  {
+    "id": "clean-architecture-java",
+    "title": "Clean Architecture em Java: Guia Pratico",
+    "date": "2024-09-15",
+    "readTimeMinutes": 12,
+    "summary": "Como implementar Clean Architecture em projetos Java com Spring Boot, separando responsabilidades e criando codigo testavel e escalavel.",
+    "content": "# Clean Architecture em Java\n\n## Introducao\n\nA Clean Architecture, proposta por Robert C. Martin (Uncle Bob), e uma abordagem que visa criar sistemas desacoplados, testaveis e independentes de frameworks.\n\n## Camadas\n\n### Entities\nRepresentam as regras de negocio mais fundamentais. Sao objetos que encapsulam as politicas de negocio mais gerais.\n\n```java\npublic class User {\n    private Long id;\n    private String name;\n    private String email;\n    \n    public boolean isValid() {\n        return name != null && email != null;\n    }\n}\n```\n\n### Use Cases\nContem as regras de negocio da aplicacao. Cada use case representa uma acao que o usuario pode realizar.\n\n```java\n@Service\npublic class CreateUserUseCase {\n    private final UserRepository userRepository;\n    \n    public User execute(CreateUserDTO dto) {\n        User user = new User(dto.getName(), dto.getEmail());\n        return userRepository.save(user);\n    }\n}\n```\n\n### Interface Adapters\nConvertem dados entre o formato mais conveniente para use cases e entities, e o formato mais conveniente para agentes externos como banco de dados e web.\n\n### Frameworks & Drivers\nA camada mais externa. Contem frameworks e ferramentas como Spring Boot, JPA, etc.\n\n## Beneficios\n\n- **Testabilidade**: cada camada pode ser testada de forma isolada\n- **Independencia**: mudancas em frameworks nao afetam regras de negocio\n- **Flexibilidade**: facil de trocar implementacoes\n\n## Conclusao\n\nA Clean Architecture requer mais esforco inicial, mas os beneficios a longo prazo compensam amplamente o investimento.",
+    "tags": ["Java", "Architecture", "Clean Code"]
+  },
+  {
+    "id": "spring-boot-vs-quarkus",
+    "title": "Spring Boot vs Quarkus: Qual Escolher?",
+    "date": "2024-07-20",
+    "readTimeMinutes": 10,
+    "summary": "Comparacao detalhada entre Spring Boot e Quarkus, analisando performance, ecossistema, curva de aprendizado e casos de uso ideais.",
+    "content": "# Spring Boot vs Quarkus\n\n## Introducao\n\nO ecossistema Java oferece diversas opcoes de frameworks. Spring Boot e Quarkus sao as mais populares atualmente.\n\n## Spring Boot\n\n### Vantagens\n- Ecossistema maduro e vasto\n- Comunidade enorme\n- Documentacao extensa\n- Integracao com praticamente qualquer tecnologia\n\n### Desvantagens\n- Tempo de startup mais lento\n- Maior consumo de memoria\n\n```java\n@SpringBootApplication\npublic class Application {\n    public static void main(String[] args) {\n        SpringApplication.run(Application.class, args);\n    }\n}\n```\n\n## Quarkus\n\n### Vantagens\n- Startup ultra-rapido (especialmente com GraalVM)\n- Baixo consumo de memoria\n- Developer experience excelente com live reload\n\n### Desvantagens\n- Ecossistema menor\n- Comunidade em crescimento\n\n## Quando usar cada um?\n\n- **Spring Boot**: projetos enterprise, equipes grandes, necessidade de integracao com muitas ferramentas\n- **Quarkus**: microservicos, serverless, aplicacoes cloud-native com foco em performance\n\n## Conclusao\n\nAmbos sao excelentes escolhas. A decisao depende do contexto do projeto e das necessidades da equipe.",
+    "tags": ["Java", "Spring Boot", "Quarkus"]
+  },
+  {
+    "id": "performance-apis-rest",
+    "title": "Performance em APIs REST com Java",
+    "date": "2024-05-10",
+    "readTimeMinutes": 15,
+    "summary": "Tecnicas avancadas para otimizar a performance de APIs REST em Java, incluindo cache, paginacao, compressao e async processing.",
+    "content": "# Performance em APIs REST\n\n## Introducao\n\nAPIs REST de alta performance sao cruciais para aplicacoes modernas. Vamos explorar tecnicas essenciais.\n\n## Tecnicas de Otimizacao\n\n### 1. Cache com Redis\n\n```java\n@Cacheable(value = \"products\", key = \"#id\")\npublic Product findById(Long id) {\n    return productRepository.findById(id)\n        .orElseThrow(() -> new NotFoundException(\"Product not found\"));\n}\n```\n\n### 2. Paginacao\n\nSempre pagine resultados para evitar sobrecarga.\n\n```java\n@GetMapping(\"/products\")\npublic Page<Product> list(\n    @RequestParam(defaultValue = \"0\") int page,\n    @RequestParam(defaultValue = \"20\") int size) {\n    return productRepository.findAll(PageRequest.of(page, size));\n}\n```\n\n### 3. Compressao GZIP\n\nHabilite compressao no `application.yml`:\n\n```yaml\nserver:\n  compression:\n    enabled: true\n    mime-types: application/json\n```\n\n### 4. Processamento Assincrono\n\nUse `@Async` para tarefas que nao precisam de resposta imediata.\n\n### 5. Connection Pooling\n\nConfigure o HikariCP adequadamente para seu volume de requisicoes.\n\n## Metricas\n\nUse Spring Actuator + Micrometer para monitorar:\n- Response time (P95, P99)\n- Throughput (req/s)\n- Error rate\n\n## Conclusao\n\nOtimizacao de performance e um processo continuo. Meça antes de otimizar e foque nos gargalos reais.",
+    "tags": ["Java", "REST API", "Performance"]
+  },
+  {
+    "id": "testes-junit5",
+    "title": "Testes Eficientes com JUnit 5 e Mockito",
+    "date": "2024-03-01",
+    "readTimeMinutes": 8,
+    "summary": "Guia pratico para escrever testes unitarios e de integracao eficientes usando JUnit 5, Mockito e Testcontainers.",
+    "content": "# Testes com JUnit 5\n\n## Introducao\n\nTestes automatizados sao fundamentais para a qualidade do software. JUnit 5 trouxe muitas melhorias.\n\n## Testes Unitarios\n\n```java\n@ExtendWith(MockitoExtension.class)\nclass UserServiceTest {\n    @Mock\n    private UserRepository userRepository;\n    \n    @InjectMocks\n    private UserService userService;\n    \n    @Test\n    @DisplayName(\"Deve criar usuario com sucesso\")\n    void shouldCreateUser() {\n        // given\n        var dto = new CreateUserDTO(\"Joao\", \"joao@email.com\");\n        var expected = new User(1L, \"Joao\", \"joao@email.com\");\n        when(userRepository.save(any())).thenReturn(expected);\n        \n        // when\n        var result = userService.create(dto);\n        \n        // then\n        assertThat(result.getName()).isEqualTo(\"Joao\");\n        verify(userRepository).save(any());\n    }\n}\n```\n\n## Testes de Integracao\n\nUse Testcontainers para testes com banco de dados real:\n\n```java\n@SpringBootTest\n@Testcontainers\nclass UserRepositoryIT {\n    @Container\n    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(\"postgres:15\");\n    \n    @Test\n    void shouldSaveAndFind() {\n        // teste com banco real\n    }\n}\n```\n\n## Boas Praticas\n\n- Use nomes descritivos com `@DisplayName`\n- Siga o padrao AAA (Arrange, Act, Assert)\n- Teste comportamento, nao implementacao\n- Mantenha testes independentes entre si\n\n## Conclusao\n\nBons testes dão confiança para refatorar e evoluir o codigo com segurança.",
+    "tags": ["Java", "JUnit", "Testing"]
+  }
+]

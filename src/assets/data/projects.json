@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ecommerce-api",
+    "title": "E-commerce API",
+    "description": "API REST completa para e-commerce com autenticacao, carrinho de compras, pagamentos e gestao de produtos. Construida com Spring Boot e arquitetura hexagonal.",
+    "imageUrl": "",
+    "tags": ["Java", "Spring Boot", "PostgreSQL", "Docker", "Redis"],
+    "projectUrl": "https://github.com/jvmaiaa",
+    "githubUrl": "https://github.com/jvmaiaa",
+    "featured": true
+  },
+  {
+    "id": "task-manager",
+    "title": "Task Manager",
+    "description": "Sistema de gerenciamento de tarefas com autenticacao JWT, RBAC e notificacoes em tempo real via WebSocket. Interface responsiva com Angular.",
+    "imageUrl": "",
+    "tags": ["Java", "Spring Security", "Angular", "WebSocket", "MySQL"],
+    "projectUrl": "https://github.com/jvmaiaa",
+    "githubUrl": "https://github.com/jvmaiaa",
+    "featured": true
+  },
+  {
+    "id": "microservices-arch",
+    "title": "Microservices Architecture",
+    "description": "Arquitetura de microservicos com Service Discovery, API Gateway, Circuit Breaker e mensageria assincrona. Orquestrado com Docker Compose e Kubernetes.",
+    "imageUrl": "",
+    "tags": ["Java", "Spring Cloud", "RabbitMQ", "Docker", "Kubernetes"],
+    "projectUrl": "https://github.com/jvmaiaa",
+    "githubUrl": "https://github.com/jvmaiaa",
+    "featured": true
+  },
+  {
+    "id": "realtime-chat",
+    "title": "Real-time Chat",
+    "description": "Aplicacao de chat em tempo real com salas, mensagens privadas e historico persistido. Backend em Spring Boot com WebSocket e frontend em React.",
+    "imageUrl": "",
+    "tags": ["Java", "Spring Boot", "WebSocket", "React", "MongoDB"],
+    "projectUrl": "https://github.com/jvmaiaa",
+    "githubUrl": "https://github.com/jvmaiaa",
+    "featured": false
+  }
+]
