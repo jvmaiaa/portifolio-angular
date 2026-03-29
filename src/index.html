@@ -1,17 +1,36 @@
 <!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
+  <!-- META TAGS BÁSICAS
+    Define a codificação de caracteres (suporte a acentos, ç etc.)
+    e torna o site responsivo em dispositivos móveis.
+  -->
   <meta charset="utf-8">
   <title>Joao Victor | Desenvolvedor Java Senior - Spring Boot, Microservicos</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- META TAGS DE SEO
+    Informações lidas pelos motores de busca (Google, Bing) para indexar
+    e exibir seu portfolio nos resultados de pesquisa.
+  -->
   <meta name="description" content="Portfolio de Joao Victor, Desenvolvedor Java Senior especializado em Spring Boot, microservicos, APIs REST e arquitetura de software.">
   <meta name="keywords" content="desenvolvedor java, java developer, spring boot, microservicos, api rest, backend developer, java senior, joao victor">
   <meta name="author" content="Joao Victor">
+
+  <!-- META TAGS DE SEGURANÇA
+    Cabeçalhos que protegem contra ataques comuns:
+    - X-Content-Type-Options: evita que o browser interprete arquivos com um tipo MIME diferente do declarado (MIME sniffing).
+    - Referrer-Policy: controla quais informações de origem são enviadas junto com as requisições feitas pelo seu site.
+  -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
-  <!-- Open Graph -->
+  <!-- OPEN GRAPH / TWITTER CARD
+    Controlam como seu site aparece quando compartilhado em redes sociais
+    como LinkedIn, WhatsApp e Twitter — gerando aquele "card" com título
+    e descrição em vez de um link simples.
+  -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Joao Victor | Java Developer">
   <meta property="og:description" content="Portfolio de Joao Victor, Desenvolvedor Java Senior especializado em Spring Boot, microservicos, APIs REST e arquitetura de software.">
@@ -19,15 +38,28 @@
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Preconnect for fonts -->
+  <!-- PRECONNECT DE FONTES
+    Abre conexões antecipadas com os servidores externos de fontes,
+    reduzindo o tempo de carregamento ao avisar o browser com
+    antecedência de quais domínios serão usados.
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-  <!-- Fonts: Sora + JetBrains Mono -->
+  <!-- fontes:
+    - Sora: fonte principal para textos e títulos.
+    - JetBrains Mono: fonte monoespaçada para trechos de código.
+  -->
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD — DADOS ESTRUTURADOS (Schema.org)
+    Script invisível ao usuário, lido pelo Google para entender
+    semanticamente quem é você. Com ele, o Google sabe que esta página
+    representa uma Pessoa com nome, cargo, perfis e habilidades.
+    Isso pode gerar "rich results" na busca, como painéis de conhecimento
+    e cards especiais nos resultados — benefício direto para SEO.
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,6 +75,7 @@
   </script>
 </head>
 <body>
+  <!--COMPONENTE RAIZ DO ANGULAR-->
   <app-root></app-root>
 </body>
 </html>

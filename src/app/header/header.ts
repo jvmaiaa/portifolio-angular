@@ -1,13 +1,13 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  inject,
-  signal,
-  PLATFORM_ID,
-  AfterViewInit,
-  OnDestroy,
-} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnDestroy,
+  PLATFORM_ID,
+  signal,
+} from '@angular/core';
 import { ThemeService } from '../core/services/theme.service';
 
 @Component({
@@ -19,7 +19,7 @@ import { ThemeService } from '../core/services/theme.service';
       <nav class="nav-container" role="navigation" aria-label="Main navigation">
         <a class="logo" href="#hero" (click)="scrollTo($event, 'hero')">
           <span class="logo-bracket">{{ '{' }}</span>
-          <span class="logo-text">Joao</span><span class="logo-method">.java()</span>
+          <span class="logo-text">Joao.</span><span class="logo-methodName">Maia</span><span class="logo-parenthesis">()</span>
           <span class="logo-bracket">{{ '}' }}</span>
           <span class="logo-cursor">|</span>
         </a>
@@ -110,7 +110,8 @@ import { ThemeService } from '../core/services/theme.service';
 
     .logo-bracket { color: var(--java-orange); }
     .logo-text { color: var(--text-primary); font-weight: 600; }
-    .logo-method { color: var(--spring-green); }
+    .logo-methodName { color: var(--spring-blue); }
+    .logo-parenthesis { color: var(--spring-green); }
 
     .logo-cursor {
       color: var(--java-orange);
