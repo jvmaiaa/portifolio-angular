@@ -20,11 +20,11 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
           </h1>
 
           <p class="hero-title">
-            <span class="title-highlight">Backend Developer</span> &mdash; Java, Spring Boot, Microservicos &amp; Cloud
+            <span class="title-highlight">Backend Developer</span> &mdash; Java, Spring Boot, Microserviços &amp; Cloud
           </p>
 
           <p class="hero-description">
-            Especialista no ecossistema Java/Spring com mais de 3 anos de experiência, e foco no setor financeiro. Expertise na construção de microsserviços escaláveis, arquiteturas orientadas a eventos (Kafka/RabbitMQ) e soluções resilientes em nuvem (AWS). Comprometido com a excelência técnica através de SOLID, Clean Code e TDD, garantindo alta cobertura de testes e performance em sistemas de larga escala.
+            Especialista no ecossistema Java/Spring com mais de 3 anos de experiência, e foco no setor financeiro. Expertise na construção de microsserviços escaláveis, arquiteturas orientadas a eventos (Kafka/RabbitMQ) e soluções resilientes em nuvem (AWS). Comprometido com boas práticas de: SOLID, KISS, Clean Code, POO, TDD. Além disso busco garantir uma alta cobertura de testes e performance em sistemas de larga escala.
           </p>
 
           <div class="hero-cta">
@@ -83,7 +83,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   `,
   styles: `
     .hero {
-      min-height: 100vh;
+      min-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
