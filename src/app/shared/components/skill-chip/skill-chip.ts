@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { Skill } from '../../../core/models';
 
 @Component({
@@ -52,8 +52,18 @@ import { Skill } from '../../../core/models';
 export class SkillChip {
   readonly skill = input.required<Skill>();
 
+  // Ícones que não existem como "-original" no Devicons
+  private readonly iconVariants: Record<string, string> = {
+    amazonwebservices: 'amazonwebservices-original-wordmark',
+    rabbitmq: 'rabbitmq-original',
+    kubernetes: 'kubernetes-plain',
+    css3: 'css3-plain',
+    html5: 'html5-plain',
+  };
+
   readonly iconUrl = computed(() => {
     const icon = this.skill().icon;
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`;
+    const variant = this.iconVariants[icon] ?? `${icon}-original`;
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${variant}.svg`;
   });
 }
