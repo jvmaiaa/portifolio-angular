@@ -269,7 +269,7 @@ export class Header implements AfterViewInit, OnDestroy {
   readonly navLinks = [
     { id: 'hero', label: 'Sobre' },
     { id: 'skills', label: 'Skills' },
-    { id: 'certifications', label: 'Certificacoes' },
+    { id: 'certifications', label: 'Certificações' },
     { id: 'projects', label: 'Projetos' },
     { id: 'articles', label: 'Artigos' },
     { id: 'footer', label: 'Contato' },

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-section-header',
@@ -6,7 +6,6 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="section-header">
-      <span class="section-label">{{ label() }}</span>
       <h2 class="section-title">{{ title() }}</h2>
       @if (description()) {
         <p class="section-description">{{ description() }}</p>
@@ -48,7 +47,6 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
   `,
 })
 export class SectionHeader {
-  readonly label = input.required<string>();
   readonly title = input.required<string>();
   readonly description = input<string>('');
 }

@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit } from '@angular/core';
-import { PortfolioDataService } from '../../core/services/portfolio-data.service';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { Article } from '../../core/models';
+import { PortfolioDataService } from '../../core/services/portfolio-data.service';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { TechBadge } from '../../shared/components/tech-badge/tech-badge';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
@@ -48,7 +48,7 @@ import { ArticleModal } from './article-modal';
   `,
   styles: `
     .articles-section {
-      padding: 5rem 2rem;
+      padding: 2rem 2rem;
       content-visibility: auto;
     }
 

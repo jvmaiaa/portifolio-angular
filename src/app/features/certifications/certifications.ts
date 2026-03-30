@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit } from '@angular/core';
-import { PortfolioDataService } from '../../core/services/portfolio-data.service';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { Certification } from '../../core/models';
+import { PortfolioDataService } from '../../core/services/portfolio-data.service';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 
@@ -12,8 +12,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   template: `
     <section id="certifications" class="certifications-section" appScrollReveal>
       <app-section-header
-        label="// Certificacoes"
-        title="Certificacoes & Credenciais"
+        title="Certificações & Credenciais"
         description="Validacoes oficiais de conhecimento tecnico obtidas ao longo da carreira."
       />
 
@@ -58,7 +57,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   `,
   styles: `
     .certifications-section {
-      padding: 5rem 2rem;
+      padding: 2rem 2rem;
       content-visibility: auto;
     }
 

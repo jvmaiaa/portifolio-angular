@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, OnInit } from '@angular/core';
-import { PortfolioDataService } from '../../core/services/portfolio-data.service';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit, signal } from '@angular/core';
 import { Project } from '../../core/models';
+import { PortfolioDataService } from '../../core/services/portfolio-data.service';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { TechBadge } from '../../shared/components/tech-badge/tech-badge';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
@@ -94,7 +94,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   `,
   styles: `
     .projects-section {
-      padding: 5rem 2rem;
+      padding: 2rem 2rem;
       content-visibility: auto;
     }
 
