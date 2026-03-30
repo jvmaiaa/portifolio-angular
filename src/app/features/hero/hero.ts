@@ -8,27 +8,23 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section id="hero" class="hero" appScrollReveal>
-      <div class="hero-grid-bg"></div>
       <div class="hero-content">
         <div class="hero-text">
-          <div class="availability-badge">
+          <!-- <div class="availability-badge">
             <span class="pulse-dot"></span>
             Disponivel para oportunidades
-          </div>
+          </div> -->
 
           <h1 class="hero-name">
-            <span class="greeting">Ola, eu sou</span>
             <span class="name-typewriter">Joao Victor</span>
           </h1>
 
           <p class="hero-title">
-            <span class="title-highlight">Java Developer</span> &mdash; Spring Boot, Microservicos &amp; Cloud
+            <span class="title-highlight">Backend Developer</span> &mdash; Java, Spring Boot, Microservicos &amp; Cloud
           </p>
 
           <p class="hero-description">
-            Desenvolvedor Back-End apaixonado por criar solucoes robustas e escalaveis.
-            Experiencia com Spring Boot, microservicos, APIs REST e arquitetura de software.
-            Focado em codigo limpo, boas praticas e entrega de valor.
+            Especialista no ecossistema Java/Spring com mais de 3 anos de experiência, e foco no setor financeiro. Expertise na construção de microsserviços escaláveis, arquiteturas orientadas a eventos (Kafka/RabbitMQ) e soluções resilientes em nuvem (AWS). Comprometido com a excelência técnica através de SOLID, Clean Code e TDD, garantindo alta cobertura de testes e performance em sistemas de larga escala.
           </p>
 
           <div class="hero-cta">
@@ -78,7 +74,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
         <div class="hero-avatar">
           <div class="avatar-wrapper">
             <div class="avatar-placeholder">
-              <span class="avatar-initials">JV</span>
+              <img src="https://github.com/jvmaiaa.png" alt="Avatar de Joao Victor" class="avatar-image" />
             </div>
           </div>
         </div>
@@ -91,7 +87,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6rem 2rem 4rem;
+      /* padding: 2rem 2rem; */
       position: relative;
       overflow: hidden;
     }
@@ -110,7 +106,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
     .hero-content {
       max-width: 1200px;
       width: 100%;
-      margin: 0 auto;
+      /* margin: 0 auto; */
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 4rem;
@@ -119,7 +115,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
       z-index: 1;
     }
 
-    .availability-badge {
+    /* .availability-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -131,33 +127,33 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
       border-radius: 999px;
       padding: 0.4rem 1rem;
       margin-bottom: 1.5rem;
-    }
+    } */
 
-    .pulse-dot {
+    /* .pulse-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: var(--spring-green);
       animation: pulse 2s ease-in-out infinite;
-    }
+    } */
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(1.3); }
     }
 
-    .hero-name {
+    /* .hero-name {
       margin: 0 0 1rem;
-    }
+    } */
 
-    .greeting {
+    /* .greeting {
       display: block;
       font-family: 'Sora', sans-serif;
       font-size: 1.1rem;
       font-weight: 400;
       color: var(--text-secondary);
       margin-bottom: 0.5rem;
-    }
+    } */
 
     .name-typewriter {
       display: inline-block;
@@ -288,9 +284,9 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
       animation: avatar-spin 6s linear infinite;
     }
 
-    @keyframes avatar-spin {
+    /* @keyframes avatar-spin {
       100% { rotate: 360deg; }
-    }
+    } */
 
     .avatar-placeholder {
       width: 100%;
@@ -308,6 +304,10 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
       font-weight: 800;
       color: var(--java-orange);
       opacity: 0.7;
+    }
+
+    .avatar-image {
+      border-radius: 50%;
     }
 
     @media (max-width: 768px) {
