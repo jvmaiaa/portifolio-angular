@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit } from '@angular/core';
-import { PortfolioDataService } from '../../core/services/portfolio-data.service';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { Skill } from '../../core/models';
+import { PortfolioDataService } from '../../core/services/portfolio-data.service';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { SkillChip } from '../../shared/components/skill-chip/skill-chip';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
@@ -18,19 +18,36 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
         description="Meu toolkit de desenvolvimento, construido ao longo de anos de experiencia em projetos reais."
       />
 
-      <div class="marquee-container" aria-label="Lista de habilidades tecnicas">
-        <div class="marquee-track">
-          @for (skill of doubledSkills(); track $index) {
-            <app-skill-chip [skill]="skill" />
-          }
+      <div class="marquee-wrapper">
+        <div class="marquee-container" aria-label="Lista de habilidades tecnicas - linha 1">
+          <div class="marquee-track row-one">
+            @for (skill of rowOne(); track $index) {
+              <app-skill-chip [skill]="skill" />
+            }
+          </div>
         </div>
+
+        <div class="marquee-container" aria-label="Lista de habilidades tecnicas - linha 2">
+          <div class="marquee-track row-two">
+            @for (skill of rowTwo(); track $index) {
+              <app-skill-chip [skill]="skill" />
+            }
+          </div>
+        </div>
+
       </div>
     </section>
   `,
   styles: `
     .skills-section {
-      padding: 5rem 2rem;
+      padding: 2rem 2rem;
       content-visibility: auto;
+    }
+
+    .marquee-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .marquee-container {
@@ -55,17 +72,29 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
       display: flex;
       gap: 1rem;
       width: max-content;
-      animation: marquee var(--marquee-duration, 35s) linear infinite;
       will-change: transform;
+    }
+
+    .row-one {
+      animation: marquee-left var(--marquee-duration, 35s) linear infinite;
+    }
+
+    .row-two {
+      animation: marquee-right var(--marquee-duration, 35s) linear infinite;
     }
 
     .marquee-container:hover .marquee-track {
       animation-play-state: paused;
     }
 
-    @keyframes marquee {
-      0% { transform: translateX(0); }
+    @keyframes marquee-left {
+      0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    @keyframes marquee-right {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -80,11 +109,17 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
 export class Skills implements OnInit {
   private readonly dataService = inject(PortfolioDataService);
 
-  readonly doubledSkills = signal<Skill[]>([]);
+  readonly rowOne = signal<Skill[]>([]);
+  readonly rowTwo = signal<Skill[]>([]);
 
   ngOnInit(): void {
     this.dataService.getSkills().subscribe((data) => {
-      this.doubledSkills.set([...data, ...data]);
+      const half = Math.ceil(data.length / 2);
+      const firstHalf = data.slice(0, half);
+      const secondHalf = data.slice(half);
+
+      this.rowOne.set([...firstHalf, ...firstHalf]);
+      this.rowTwo.set([...secondHalf, ...secondHalf]);
     });
   }
 }
