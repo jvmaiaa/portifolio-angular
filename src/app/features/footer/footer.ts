@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           <div class="footer-brand">
             <span class="footer-logo">
                 <span class="logo-bracket">{{ '{' }}</span>
-                <span class="logo-text">Joao</span><span class="logo-method">.java()</span>
+                <span class="logo-text">Joao.</span><span class="logo-methodName">Maia</span><span class="logo-parenthesis">()</span>
                 <span class="logo-bracket">{{ '}' }}</span>
             </span>
             <p class="footer-tagline">
@@ -20,7 +20,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </div>
 
           <div class="footer-nav">
-            <h4 class="footer-heading">Navegacao</h4>
+            <h4 class="footer-heading">Navegação</h4>
             <ul class="footer-links">
               <li><a href="#hero" aria-label="Ir para secao Sobre">Sobre</a></li>
               <li><a href="#skills" aria-label="Ir para secao Skills">Skills</a></li>
@@ -63,7 +63,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{ currentYear }} Joao Victor. Todos os direitos reservados.
+            &copy; {{ currentYear }} João Victor. Todos os direitos reservados.
           </p>
           <p class="built-with">
             Built with Angular + Java love &#9749;
@@ -100,7 +100,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
     .logo-bracket { color: var(--java-orange); }
     .logo-text { color: var(--text-primary); font-weight: 600; }
-    .logo-method { color: var(--spring-green); }
+    .logo-methodName { color: var(--spring-blue); }
+    .logo-parenthesis { color: var(--spring-green); }
 
     .footer-tagline {
       font-size: 0.9rem;
@@ -196,7 +197,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
       .footer-bottom {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
         text-align: center;
       }
     }
