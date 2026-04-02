@@ -13,9 +13,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   template: `
     <section id="skills" class="skills-section" appScrollReveal>
       <app-section-header
-        label="// Skills"
         title="Tecnologias & Ferramentas"
-        description="Meu toolkit de desenvolvimento, construido ao longo de anos de experiencia em projetos reais."
       />
 
       <div class="marquee-wrapper">

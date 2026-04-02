@@ -12,8 +12,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   template: `
     <section id="certifications" class="certifications-section" appScrollReveal>
       <app-section-header
-        title="Certificações & Credenciais"
-        description="Validacoes oficiais de conhecimento tecnico obtidas ao longo da carreira."
+        title="Certificações"
       />
 
       <div class="cert-grid">
