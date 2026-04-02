@@ -66,7 +66,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             &copy; {{ currentYear }} João Victor. Todos os direitos reservados.
           </p>
           <p class="built-with">
-            Built with Angular + Java love &#9749;
+            Built with Angular + Java &#9749;
           </p>
         </div>
       </div>

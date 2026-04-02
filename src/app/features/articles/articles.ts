@@ -14,9 +14,7 @@ import { ArticleModal } from './article-modal';
   template: `
     <section id="articles" class="articles-section" appScrollReveal>
       <app-section-header
-        label="// Artigos"
-        title="Artigos & Publicacoes"
-        description="Compartilhando conhecimento sobre desenvolvimento Java, arquitetura e boas praticas."
+        title="Artigos & Publicações"
       />
 
       <div class="articles-grid">
