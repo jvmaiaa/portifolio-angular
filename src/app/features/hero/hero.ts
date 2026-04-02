@@ -83,7 +83,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
   `,
   styles: `
     .hero {
-      min-height: 70vh;
+      min-height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
