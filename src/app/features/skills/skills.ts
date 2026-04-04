@@ -22,6 +22,9 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
             @for (skill of rowOne(); track $index) {
               <app-skill-chip [skill]="skill" />
             }
+            @for (skill of rowOne(); track $index) {
+              <app-skill-chip [skill]="skill" />
+            }
           </div>
         </div>
 
@@ -30,9 +33,11 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
             @for (skill of rowTwo(); track $index) {
               <app-skill-chip [skill]="skill" />
             }
+            @for (skill of rowTwo(); track $index) {
+              <app-skill-chip [skill]="skill" />
+            }
           </div>
         </div>
-
       </div>
     </section>
   `,
@@ -116,8 +121,8 @@ export class Skills implements OnInit {
       const firstHalf = data.slice(0, half);
       const secondHalf = data.slice(half);
 
-      this.rowOne.set([...firstHalf, ...firstHalf]);
-      this.rowTwo.set([...secondHalf, ...secondHalf]);
+      this.rowOne.set(firstHalf);
+      this.rowTwo.set(secondHalf);
     });
   }
 }

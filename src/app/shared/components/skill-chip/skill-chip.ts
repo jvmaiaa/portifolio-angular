@@ -57,13 +57,17 @@ export class SkillChip {
     amazonwebservices: 'amazonwebservices-original-wordmark',
     rabbitmq: 'rabbitmq-original',
     kubernetes: 'kubernetes-plain',
-    css3: 'css3-plain',
-    html5: 'html5-plain',
+    apachekafka: 'apachekafka-original',
+    gradle: 'gradle-original',
+    intellij: 'intellij-original',
+    bitbucket: 'bitbucket-original',
+    gitlab: 'gitlab-original',
+    // html: 'html5-original',
   };
 
   readonly iconUrl = computed(() => {
     const icon = this.skill().icon;
     const variant = this.iconVariants[icon] ?? `${icon}-original`;
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${variant}.svg`;
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${variant}.svg`;
   });
 }
