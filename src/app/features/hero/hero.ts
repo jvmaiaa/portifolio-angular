@@ -20,7 +20,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
           </h1>
 
           <p class="hero-title">
-            <span class="title-highlight">Backend Developer</span> &mdash; Java, Spring Boot, Microserviços &amp; Cloud
+            <span class="title-highlight">Backend Developer</span> &mdash; Java, Spring Boot, Microserviços e Cloud
           </p>
 
           <p class="hero-description">

@@ -14,7 +14,6 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
     <section id="projects" class="projects-section" appScrollReveal>
       <app-section-header
         title="Projetos em Destaque"
-        description="Soluções que demonstram minha experiência com arquitetura, back-end e boas práticas."
       />
 
       <div class="filter-bar">
