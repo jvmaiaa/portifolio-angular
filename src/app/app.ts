@@ -1,13 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Header } from './header/header';
-import { Hero } from './features/hero/hero';
-import { Skills } from './features/skills/skills';
-import { Certifications } from './features/certifications/certifications';
-import { Projects } from './features/projects/projects';
-import { Articles } from './features/articles/articles';
-import { Footer } from './features/footer/footer';
-import { ThemeService } from './core/services/theme.service';
 import { SeoService } from './core/services/seo.service';
+import { ThemeService } from './core/services/theme.service';
+import { Articles } from './features/articles/articles';
+import { Certifications } from './features/certifications/certifications';
+import { Footer } from './features/footer/footer';
+import { Hero } from './features/hero/hero';
+import { Projects } from './features/projects/projects';
+import { Skills } from './features/skills/skills';
+import { Header } from './header/header';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,7 @@ import { SeoService } from './core/services/seo.service';
       <app-hero />
       <app-skills />
       <app-certifications />
-      <app-projects />
+      <!-- <app-projects /> -->
       <app-articles />
     </main>
     <app-footer />

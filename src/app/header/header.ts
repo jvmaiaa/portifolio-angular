@@ -270,9 +270,9 @@ export class Header implements AfterViewInit, OnDestroy {
     { id: 'hero', label: 'Sobre' },
     { id: 'skills', label: 'Skills' },
     { id: 'certifications', label: 'Certificações' },
-    { id: 'projects', label: 'Projetos' },
+    // { id: 'projects', label: 'Projetos' },
     { id: 'articles', label: 'Artigos' },
-    { id: 'footer', label: 'Contato' },
+    // { id: 'footer', label: 'Contato' },
   ];
 
   ngAfterViewInit(): void {
