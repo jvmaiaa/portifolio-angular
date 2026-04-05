@@ -56,7 +56,7 @@ export class SkillChip {
   private readonly themeService = inject(ThemeService);
 
   // Ícones que precisam de inversão de cor no tema dark
-  private readonly iconsNeedingInversion = ['apachekafka', 'amazonwebservices'];
+  private readonly iconsNeedingInversion = ['apachekafka'];
 
   // Variantes de ícones
   private readonly iconVariants: Record<string, string> = {
@@ -68,6 +68,7 @@ export class SkillChip {
     intellij: 'intellij-original',
     bitbucket: 'bitbucket-original',
     gitlab: 'gitlab-original',
+    insomnia: 'insomnia-original',
   };
 
   readonly iconUrl = computed(() => {
