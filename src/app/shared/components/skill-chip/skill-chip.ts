@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { Skill } from '../../../core/models';
+import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-skill-chip',
@@ -11,6 +12,7 @@ import { Skill } from '../../../core/models';
         [src]="iconUrl()"
         [alt]="skill().name + ' icon'"
         class="skill-icon"
+        [style.filter]="getIconFilter()"
         width="24"
         height="24"
         loading="lazy"
@@ -51,8 +53,12 @@ import { Skill } from '../../../core/models';
 })
 export class SkillChip {
   readonly skill = input.required<Skill>();
+  private readonly themeService = inject(ThemeService);
 
-  // Ícones que não existem como "-original" no Devicons
+  // Ícones que precisam de inversão de cor no tema dark
+  private readonly iconsNeedingInversion = ['apachekafka', 'amazonwebservices'];
+
+  // Variantes de ícones
   private readonly iconVariants: Record<string, string> = {
     amazonwebservices: 'amazonwebservices-original-wordmark',
     rabbitmq: 'rabbitmq-original',
@@ -62,7 +68,6 @@ export class SkillChip {
     intellij: 'intellij-original',
     bitbucket: 'bitbucket-original',
     gitlab: 'gitlab-original',
-    // html: 'html5-original',
   };
 
   readonly iconUrl = computed(() => {
@@ -70,4 +75,15 @@ export class SkillChip {
     const variant = this.iconVariants[icon] ?? `${icon}-original`;
     return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${variant}.svg`;
   });
+
+  getIconFilter(): string {
+    const icon = this.skill().icon;
+    const isDarkTheme = this.themeService.isDark();
+
+    // Se está no tema dark E o ícone precisa de inversão, inverte para branco
+    if (isDarkTheme && this.iconsNeedingInversion.includes(icon)) {
+      return 'invert(1)';
+    }
+    return 'none';
+  }
 }
