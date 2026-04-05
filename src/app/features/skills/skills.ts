@@ -50,11 +50,12 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
     .marquee-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.5rem;
     }
 
     .marquee-container {
       overflow: hidden;
+      padding-top: 0.5rem;
       mask-image: linear-gradient(
         90deg,
         transparent 0%,
@@ -88,6 +89,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.dir
 
     .marquee-container:hover .marquee-track {
       animation-play-state: paused;
+      cursor: pointer;
     }
 
     @keyframes marquee-left {
