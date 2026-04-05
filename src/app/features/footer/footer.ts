@@ -24,7 +24,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             <ul class="footer-links">
               <li><a href="#hero" aria-label="Ir para secao Sobre">Sobre</a></li>
               <li><a href="#skills" aria-label="Ir para secao Skills">Skills</a></li>
-              <li><a href="#projects" aria-label="Ir para secao Projetos">Projetos</a></li>
+              <!-- <li><a href="#projects" aria-label="Ir para secao Projetos">Projetos</a></li> -->
               <li><a href="#articles" aria-label="Ir para secao Artigos">Artigos</a></li>
             </ul>
           </div>
